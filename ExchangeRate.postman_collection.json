@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "229bfcad-a149-4980-a462-c9cd891672a2",
+		"name": "ExchangeRate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Indexing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/indexing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"indexing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get (Date)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/kurs/startdate={{startdate}}/enddate={{enddate}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"kurs",
+						"startdate={{startdate}}",
+						"enddate={{enddate}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get (Currency, Date)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/kurs/startdate={{startdate}}/enddate={{enddate}}/{{symbol}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"kurs",
+						"startdate={{startdate}}",
+						"enddate={{enddate}}",
+						"{{symbol}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"symbol\": \"USD\",\r\n\t\"e_rate\": {\r\n\t\t\"sell\": \"1803.55\",\r\n\t\t\"buy\": \"1773.55\"\r\n\t},\r\n\t\"tt_counter\": {\r\n\t\t\"sell\": \"1803.55\",\r\n\t\t\"buy\": \"1773.55\"\r\n\t},\r\n\t\"bank_notes\": {\r\n\t\t\"sell\": \"1803.55\",\r\n\t\t\"buy\": \"1773.55\"\r\n\t},\r\n\t\"date\": \"2019-02-16\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/kurs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"kurs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"symbol\": \"SGD\",\r\n\t\"e_rate\": {\r\n\t\t\"sell\": \"2222.33\",\r\n\t\t\"buy\": \"3333.22\"\r\n\t},\r\n\t\"tt_counter\": {\r\n\t\t\"sell\": \"2222.33\",\r\n\t\t\"buy\": \"3333.22\"\r\n\t},\r\n\t\"bank_notes\": {\r\n\t\t\"sell\": \"2222.33\",\r\n\t\t\"buy\": \"3333.22\"\r\n\t},\r\n\t\"date\": \"2019-02-16\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7000/api/kurs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"kurs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/kurs/:date",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"kurs",
+						":date"
+					],
+					"variable": [
+						{
+							"key": "date",
+							"value": "2021-06-26"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "startdate",
+			"value": "2019-01-01"
+		},
+		{
+			"key": "enddate",
+			"value": "2022-01-01"
+		},
+		{
+			"key": "symbol",
+			"value": "USD"
+		}
+	]
+}
